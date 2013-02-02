@@ -35,7 +35,7 @@
   #include "test_sl_string_def.c"
 #undef SL_STRING_TYPE
 
-#include "stdlib/sl_wstring.h"
+#include "sl_wstring.h"
 
 static void
 test_wstring_specific_func()
