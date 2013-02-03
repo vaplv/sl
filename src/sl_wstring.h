@@ -31,6 +31,10 @@
   #include "sl_string.h.def"
 #undef SL_STRING_TYPE
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SL_API enum sl_error
 sl_wstring_insert_cstr
   (struct sl_wstring* str,
@@ -41,6 +45,10 @@ SL_API enum sl_error
 sl_wstring_append_cstr
   (struct sl_wstring* str,
    const char* cstr);
+
+#ifdef __cplusplus
+} /* extern "C" */
+#endif
 
 #endif /* SL_WSTRING_H */
 

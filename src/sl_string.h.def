@@ -68,6 +68,10 @@
 struct mem_allocator;
 SL_STRING(SL_STRING_TYPE);
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SL_API enum sl_error
 SL_CREATE_STRING(SL_STRING_TYPE)
   (const SL_STRING_CHAR(SL_STRING_TYPE)* val,
@@ -139,6 +143,10 @@ SL_API enum sl_error
 SL_STRING_CAPACITY(SL_STRING_TYPE)
   (SL_STRING(SL_STRING_TYPE)* str,
    size_t capacity);
+
+#ifdef __cplusplus
+} /* extern "C" */
+#endif
 
 #endif /* SL_STRING_STD_DEF_H || SL_STRING_WIDE_DEF_H */
 

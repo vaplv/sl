@@ -34,6 +34,10 @@
 struct mem_allocator;
 struct sl_vector;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SL_API enum sl_error
 sl_create_vector
   (size_t data_size,
@@ -122,6 +126,10 @@ sl_vector_buffer
    size_t* out_data_size,
    size_t* out_data_alignment,
    void** out_buffer);
+
+#ifdef __cplusplus
+} /* extern "C" */
+#endif
 
 #endif /* SL_VECTOR_H */
 

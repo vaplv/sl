@@ -35,6 +35,10 @@ struct mem_allocator;
 struct sl_flat_map;
 struct sl_pair;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SL_API enum sl_error
 sl_create_flat_map
   (size_t key_size,
@@ -120,6 +124,10 @@ sl_flat_map_data_buffer
    size_t* data_size, /* May be NULL. */
    size_t* data_alignment, /* May be NULL. */
    void** data_buffer); /* May be NULL. */
+
+#ifdef __cplusplus
+} /* extern "C" */
+#endif
 
 #endif /* SL_FLAT_MAP */
 

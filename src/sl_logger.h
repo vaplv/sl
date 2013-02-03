@@ -40,6 +40,10 @@ struct sl_log_stream {
 struct mem_allocator;
 struct sl_logger;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SL_API enum sl_error
 sl_create_logger
   (struct mem_allocator* allocator, /* May be NULL. */
@@ -74,5 +78,9 @@ sl_logger_vprint
   (struct sl_logger* logger,
    const char* fmt,
    va_list list);
+
+#ifdef __cplusplus
+} /* extern "C" */
+#endif
 
 #endif /* SL_LOGGER_H */

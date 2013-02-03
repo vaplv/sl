@@ -44,6 +44,10 @@ struct sl_hash_table_it {
   size_t bucket;
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SL_API enum sl_error
 sl_create_hash_table
   (size_t key_size,
@@ -123,6 +127,10 @@ SL_API size_t
 sl_hash
   (const void* data,
    size_t len);
+
+#ifdef __cplusplus
+} /* extern "C" */
+#endif
 
 #endif /* SL_HASH_TABLE_H */
 
