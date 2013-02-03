@@ -25,8 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 #include "sl_hash_table.h"
-#include "sys/mem_allocator.h"
-#include "sys/sys.h"
+#include <sys/mem_allocator.h>
+#include <sys/sys.h>
 #include <stdbool.h>
 #include <string.h>
 

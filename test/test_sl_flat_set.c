@@ -25,8 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 #include "sl_flat_set.h"
-#include "sys/mem_allocator.h"
-#include "sys/sys.h"
+#include <sys/mem_allocator.h>
+#include <sys/sys.h>
 #include <stdbool.h>
 #include <stdlib.h>
 

@@ -25,7 +25,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 #include "sl_logger.h"
-#include "sys/mem_allocator.h"
+#include <sys/mem_allocator.h>
 #include <assert.h>
 #include <string.h>
 
