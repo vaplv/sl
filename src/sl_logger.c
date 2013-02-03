@@ -26,8 +26,8 @@
  */
 #include "sl_logger.h"
 #include "sl_flat_set.h"
-#include "sys/mem_allocator.h"
-#include "sys/sys.h"
+#include <sys/mem_allocator.h>
+#include <sys/sys.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>

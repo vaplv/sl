@@ -29,7 +29,7 @@
 
 #include "sl.h"
 #include "sl_error.h"
-#include "sys/sys.h"
+#include <sys/sys.h>
 #include <stdarg.h>
 
 struct sl_log_stream {

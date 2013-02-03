@@ -25,9 +25,9 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 #include "sl_vector.h"
-#include "sys/math.h"
-#include "sys/mem_allocator.h"
-#include "sys/sys.h"
+#include <sys/math.h>
+#include <sys/mem_allocator.h>
+#include <sys/sys.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>

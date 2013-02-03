@@ -26,8 +26,8 @@
  */
 #include "sl_flat_set.h"
 #include "sl_vector.h"
-#include "sys/mem_allocator.h"
-#include "sys/sys.h"
+#include <sys/mem_allocator.h>
+#include <sys/sys.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>

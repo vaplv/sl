@@ -58,8 +58,6 @@ add_sl_test(vector)
 ################################################################################
 # Define output & install directories
 ################################################################################
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${sl_BINARY_DIR}/lib)
-
 install(TARGETS sl LIBRARY DESTINATION lib)
-install(FILES ${SL_FILES_INC} DESTINATION include/stdlib)
+install(FILES ${SL_FILES_INC} DESTINATION include/sl)
 

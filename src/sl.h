@@ -28,7 +28,7 @@
 #define SL_H
 
 #include "sl_error.h"
-#include "sys/sys.h"
+#include <sys/sys.h>
 
 #ifndef NDEBUG
   #define SL(func) ASSERT(SL_NO_ERROR == sl_##func)
