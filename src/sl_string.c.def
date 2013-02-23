@@ -1,6 +1,6 @@
-#include <sys/mem_allocator.h>
-#include <sys/math.h>
-#include <sys/sys.h>
+#include <snlsys/mem_allocator.h>
+#include <snlsys/math.h>
+#include <snlsys/snlsys.h>
 #include <assert.h>
 #include <string.h>
 

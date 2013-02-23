@@ -42,7 +42,7 @@
 #else
   #include "sl.h"
   #include "sl_error.h"
-  #include <sys/sys.h>
+  #include <snlsys/snlsys.h>
   #include <stdbool.h>
   #include <stddef.h>
 
