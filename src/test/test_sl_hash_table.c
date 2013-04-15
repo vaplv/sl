@@ -288,8 +288,8 @@ main(int argc UNUSED, char** argv UNUSED)
   CHECK(sl_hash_table_insert(tbl, array + 0, (char[]){'a'}), OK);
   CHECK(sl_hash_table_insert(tbl, array + 1, (char[]){'b'}), BAD_AL);
   for(count = 0; count < 255; ++count) {
-    ALIGN(16) const int i = count;
-    const char c = count;
+    ALIGN(16) const size_t i = count;
+    const char c = (char)count;
     CHECK(sl_hash_table_insert(tbl, &i, &c), OK);
   }
   CHECK(sl_free_hash_table(tbl), OK);
@@ -315,8 +315,8 @@ main(int argc UNUSED, char** argv UNUSED)
   STATIC_ASSERT(sizeof(bool_array) / sizeof(bool) < 255, Unexpected_array_size);
   memset(bool_array, 0, sizeof(bool_array));
   for(count = 0; count < sizeof(bool_array) / sizeof(bool); ++count) {
-    const char c = 'a' + (char)count;
-    CHECK(sl_hash_table_insert(tbl, (int[]){count}, &c), OK);
+    const char c = (char)('a' + (char)count);
+    CHECK(sl_hash_table_insert(tbl, &count, &c), OK);
   }
 
   CHECK(sl_hash_table_begin(NULL, NULL, NULL), BAD_ARG);
@@ -332,7 +332,7 @@ main(int argc UNUSED, char** argv UNUSED)
   CHECK(sl_hash_table_it_next(NULL, &b), BAD_ARG);
   CHECK(b, false);
   do {
-    const char c = *((char*)it.pair.data) - 'a';
+    const char c = (char)(*((char*)it.pair.data) - 'a');
     bool_array[(size_t)c] = true;
     CHECK(c,  *((int*)it.pair.key));
     CHECK(sl_hash_table_it_next(&it, &b), OK);

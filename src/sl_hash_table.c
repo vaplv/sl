@@ -60,7 +60,7 @@ fnv32(const void* data, size_t len)
   #define OFFSET32_BASIS 2166136261u
   ASSERT(!len || data);
 
-  const char* octets = data;
+  const unsigned char* octets = data;
   uint32_t hash = OFFSET32_BASIS;
   size_t i;
 
@@ -83,7 +83,7 @@ fnv64(const void* data, size_t len)
   #define OFFSET64_BASIS 14695981039346656037u
   ASSERT(!len || data);
 
-  const char* octets = data;
+  const unsigned char* octets = data;
   uint64_t hash = OFFSET64_BASIS;
   size_t i;
 
@@ -110,13 +110,14 @@ murmur_hash2_32(const void* data, size_t len, uint32_t seed)
   #define M 0x5BD1E995
   #define R 24
   ASSERT(!len || data);
+  ASSERT(len < UINT32_MAX);
 
-  uint32_t hash = seed ^ len;
-  const char* octets = data;
+  uint32_t hash = seed ^ (uint32_t)len;
+  const unsigned char* octets = data;
 
   while(len >= 4) {
     union {
-      char c[4];
+      unsigned char c[4];
       uint32_t i;
     } k = { .c = { octets[0], octets[1], octets[2], octets[3] }};
     k.i *= M;
@@ -131,9 +132,9 @@ murmur_hash2_32(const void* data, size_t len, uint32_t seed)
   }
 
   switch(len) {
-    case 3: hash ^= octets[2] << 16;
-    case 2: hash ^= octets[1] << 8;
-    case 1: hash ^= octets[0];
+    case 3: hash ^= (uint32_t)octets[2] << 16u;
+    case 2: hash ^= (uint32_t)octets[1] << 8u;
+    case 1: hash ^= (uint32_t)octets[0];
             hash *= M;
   }
 
@@ -195,7 +196,7 @@ murmur_hash2_64(const void* data, size_t len, uint64_t seed)
   hash *= M;
   hash ^= hash >> R;
 
-  return hash;
+  return (uint32_t)hash;
 
   #undef M
   #undef R

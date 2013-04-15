@@ -215,7 +215,7 @@ sl_logger_vprint(struct sl_logger* logger, const char* fmt, va_list list)
 
     ASSERT(i > 0);
     if((size_t)i >= logger->buffer_len) {
-      const size_t new_len = i + 1; /* +1 <=> null terminated character. */
+      const size_t new_len = (size_t)(i + 1); /*+1<=>null terminated character*/
       void* buffer = MEM_ALLOC(logger->allocator, new_len * sizeof(char));
       if(!buffer) {
         sl_err = SL_MEMORY_ERROR;
